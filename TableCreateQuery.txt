@@ -1,0 +1,116 @@
+Person Table
+---------->>>>>
+CREATE TABLE [dbo].[person]
+(
+	[personid] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [name] VARCHAR(50) NOT NULL, 
+    [age] INT NOT NULL, 
+    [gender] VARCHAR(50) NOT NULL, 
+    [bloodgroup] VARCHAR(50) NULL, 
+    [phone] VARCHAR(50) NOT NULL, 
+)
+
+<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+Employee Table
+
+---------->>>>>
+CREATE TABLE [dbo].[employee]
+(
+	[empid] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [designation] VARCHAR(50) NOT NULL, 
+    [salary] INT NOT NULL, 
+    [personid] INT NOT NULL, 
+    CONSTRAINT [FK_person_emp] FOREIGN KEY ([personid]) REFERENCES [person]([personid])
+)
+
+<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Doctor Table
+
+---------->>>>>
+CREATE TABLE [dbo].[doctor]
+(
+	[doctorid] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [specialty] VARCHAR(50) NOT NULL, 
+    [availabledays] VARCHAR(50) NOT NULL, 
+    [empid] INT NOT NULL, 
+    CONSTRAINT [FK_emp_doctor] FOREIGN KEY ([empid]) REFERENCES [employee]([empid])
+)
+
+<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Disease Table
+
+---------->>>>>
+CREATE TABLE [dbo].[disease]
+(
+	[diseaseid] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [diseasename] VARCHAR(50) NOT NULL
+)
+
+<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Medicine Table
+
+---------->>>>>
+CREATE TABLE [dbo].[medicine]
+(
+	[medicineid] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [medicinename] VARCHAR(50) NOT NULL
+)
+
+<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Patient Disease Table
+
+---------->>>>>
+CREATE TABLE [dbo].[patientdisease]
+(
+	[pdid] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [personid] INT NOT NULL, 
+    [diseaseid] INT NOT NULL, 
+    [medicineid] INT NOT NULL, 
+    [doctorid] INT NOT NULL
+
+	CONSTRAINT [FK_person_pd] FOREIGN KEY ([personid]) REFERENCES [person]([personid])
+	CONSTRAINT [FK_disease_pd] FOREIGN KEY ([diseaseid]) REFERENCES [disease]([diseaseid])
+	CONSTRAINT [FK_medicine_pd] FOREIGN KEY ([medicineid]) REFERENCES [medicine]([medicineid])
+	CONSTRAINT [FK_doctor_pd] FOREIGN KEY ([doctorid]) REFERENCES [doctor]([doctorid])
+)
+
+<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Appointment Table
+---------->>>>>
+
+CREATE TABLE [dbo].[appointment]
+(
+	[appointmentid] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [starttime] TIME NOT NULL, 
+    [date] DATE NOT NULL, 
+    [personid] INT NOT NULL, 
+    [doctorid] INT NOT NULL
+
+	CONSTRAINT [FK_person_apt] FOREIGN KEY ([personid]) REFERENCES [person]([personid])
+	CONSTRAINT [FK_doctor_apt] FOREIGN KEY ([doctorid]) REFERENCES [doctor]([doctorid])
+
+)
+
+<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Login Table
+---------->>>>>
+CREATE TABLE [dbo].[login]
+(
+	[username] VARCHAR(50) NOT NULL PRIMARY KEY, 
+    [password] VARCHAR(50) NOT NULL, 
+    [designation] VARCHAR(50) NOT NULL, 
+    [empid] INT NOT NULL
+
+	CONSTRAINT [FK_employee_login] FOREIGN KEY ([empid]) REFERENCES [employee]([empid])
+)
+
+<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+

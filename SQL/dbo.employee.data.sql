@@ -1,0 +1,15 @@
+SET IDENTITY_INSERT [dbo].[employee] ON
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (1, N'manager', 40000, 1)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (2, N'doctor', 30000, 2)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (3, N'doctor', 30000, 3)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (4, N'doctor', 30000, 4)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (5, N'doctor', 30000, 5)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (6, N'doctor', 30000, 6)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (7, N'doctor', 30000, 7)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (8, N'doctor', 30000, 8)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (9, N'doctor', 30000, 9)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (10, N'doctor', 30000, 10)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (11, N'doctor', 30000, 11)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (12, N'doctor', 30000, 12)
+INSERT INTO [dbo].[employee] ([empid], [designation], [salary], [personid]) VALUES (13, N'receptionist', 20000, 13)
+SET IDENTITY_INSERT [dbo].[employee] OFF

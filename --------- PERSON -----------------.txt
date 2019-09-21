@@ -1,0 +1,40 @@
+--------- PERSON -----------------
+
+insert into person values ('king', 30, 'male', 'bpv', '01711090201')
+insert into person values ('clark', 29, 'male', 'bpv', '01711090203')
+insert into person values ('joey', 29, 'male', 'bpv', '01711090205')
+insert into person values ('rose', 29, 'male', 'bnv', '01711090207')
+insert into person values ('scott', 27, 'male', 'bnv', '01711090209')
+insert into person values ('smith', 27, 'male', 'apv', '01711090211')
+insert into person values ('wilson', 25, 'male', 'apv', '01711090212')
+insert into person values ('tomas', 25, 'male', 'anv', '01711090213')
+insert into person values ('jerry', 24, 'female', 'anv', '01834101212')
+insert into person values ('daisy', 26, 'female', 'opv', '01834101214')
+insert into person values ('monica', 28, 'female', 'opv', '01834101216')
+insert into person values ('aniston', 24, 'female', 'onv', '01834101218')
+insert into person values ('jon', 25, 'male', 'onv', '01834101222')
+insert into person values ('jim', 15, 'male', 'bpv', '01834101224')
+insert into person values ('arya', 13, 'female', 'bpv', '01834101232')
+insert into person values ('bran', 15, 'male', 'bpv', '01987213511')
+insert into person values ('sansa', 17, 'female', 'apv', '01987213512')
+insert into person values ('robert', 19, 'male', 'apv', '01987213513')
+insert into person values ('ned', 10, 'male', 'apv', '01987213516')
+insert into person values ('stark', 11, 'male', 'bnv', '01987213519')
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+--------------------------EMPLOYEE ----------------------------
+
+insert into employee values ('manager', 40000, 1)
+insert into employee values ('doctor', 30000, 2)
+insert into employee values ('doctor', 30000, 3)
+insert into employee values ('doctor', 30000, 4)
+insert into employee values ('doctor', 30000, 5)
+insert into employee values ('doctor', 30000, 6)
+insert into employee values ('doctor', 30000, 7)
+insert into employee values ('doctor', 30000, 8)
+insert into employee values ('doctor', 30000, 9)
+insert into employee values ('doctor', 30000, 10)
+insert into employee values ('doctor', 30000, 11)
+insert into employee values ('doctor', 30000, 12)
+insert into employee values ('receptionist', 20000, 13)

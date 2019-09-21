@@ -1,0 +1,57 @@
+------------- QUERY to compare between person id and doctor's person id when confirming appointment---
+>> To make sure the patient and doctor for that appointment are not the same person
+select employee.personid from employee 
+where employee.empid = (select doctor.empid from doctor where doctor.doctorid = 5)
+
+---------------------------------------------------------
+
+Get last inserted id (primary key)
+------
+SELECT TOP 1 *
+FROM PERSON
+ORDER BY pid DESC
+
+---------------------------------------------------------
+>>>>>>>>>>>>>>>>>>>>>>>>> APOINTMENT TABLE ISSUE <<<<<<<<<<<<<<<<<<<<<<<<
+
+select person.*
+from person
+where person.personid in 
+	(select employee.personid
+	from employee
+	where employee.empid in
+		(
+		select doctor.empid
+		from doctor
+		where doctor.doctorid in (select appointment.doctorid from appointment)
+		)
+)
+
+---------------------------------------------------------
+
+>>>>> Get Person name from doctor id <<<<<<<
+
+select person.name
+from person, employee, doctor,appointment
+where person.personid = 
+(
+	select employee.personid where employee.empid = 
+	(
+		select doctor.empid where doctor.doctorid = appointment.doctorid
+	)
+)
+
+-------------------------------------------------------------------
+>>>>>>>>>>>>>>> Appointment table show query <<<<<<<<<<<<<<<<<<<<<<
+
+SELECT p.personid, p.name as "Patient Name" ,appointment.*, doctor.*, employee.*, person.name as "Doctor Name"
+FROM person as p, appointment
+    JOIN doctor
+        ON doctor.doctorid = appointment.doctorid
+    JOIN employee
+        ON employee.empid = doctor.empid
+    JOIN person
+        ON person.personid = employee.personid
+where appointment.personid = p.personid
+
+--------------------------------------------------------------------
